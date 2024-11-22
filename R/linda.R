@@ -199,10 +199,10 @@ linda <- function(otu.tab, meta, formula, type = 'count',
         }
         corr.pval <- coef(summary(tmp))[-1, "Pr(>|t|)"]
         if(any(corr.pval <= corr.cut)) {
-          cat('Imputation approach is used.\n')
+          message('Imputation approach is used')
           imputation <- TRUE
         } else {
-          cat('Pseudo-count approach is used.\n')
+          message('Pseudo-count approach is used.')
           imputation <- FALSE
         }
       }
